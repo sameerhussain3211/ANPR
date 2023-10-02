@@ -1,0 +1,30 @@
+<div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a {% if request.resolver_match.url_name == 'index-page' %}class="nav-link active" {% endif %} class="nav-link"  href="{% url 'index-page' %}">
+          <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+            <i class="ni ni-tv-2 text-primary text-sm opacity-10"></i>
+          </div>
+          <span {% if request.resolver_match.url_name == '' %}class="active" {% endif %} class="nav-link-text ms-1">Registered Vehicles</span>
+        </a>
+      </li>
+      
+      <li class="nav-item">
+        <a {% if request.resolver_match.url_name == 'add_user_screen' %} class="nav-link active" {% endif %} class="nav-link"  href="{% url 'add_user_screen' %}">
+          <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+            <i class="ni ni-collection text-info text-sm opacity-10"></i>
+          </div>
+          <span class="nav-link-text ms-1">Add New</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a{% if request.resolver_match.url_name == 'records' %} class="nav-link active" {% endif %} class="nav-link" 
+         href="#">
+          <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+            <i class="ni ni-collection text-info text-sm opacity-10"></i>
+          </div>
+          <span class="nav-link-text ms-1">Records</span>
+        </a>
+      </li>
+    </ul>
+  </div>

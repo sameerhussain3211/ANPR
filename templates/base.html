@@ -1,0 +1,76 @@
+ {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="apple-touch-icon" sizes="76x76" href="{% static 'img/apple-icon.png' %}">
+  <link rel="icon" type="image/png" href="{% static 'img/favicon.png' %}">
+  <title> Registered automobiles</title>
+  <!--     Fonts and icons     -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+  <!-- Nucleo Icons -->
+  <link href="{% static 'css/nucleo-icons.css' %}" rel="stylesheet" />
+  <link href="{% static '/css/nucleo-svg.css' %}" rel="stylesheet" />
+  <!-- Font Awesome Icons -->
+  <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+  <link href="{% static 'css/nucleo-svg.css' %}" rel="stylesheet" />
+  <!-- CSS Files -->
+  <link id="pagestyle" href="{% static 'css/argon-dashboard.css' %}" rel="stylesheet" />
+</head>
+
+<body class="g-sidenav-show   bg-gray-100">
+  <div class="min-height-300  position-absolute w-100" style="background-color: #660033"></div>
+  <aside class="sidenav bg-white navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-4 " id="sidenav-main">
+    <div class="sidenav-header">
+      <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
+      <a class="navbar-brand m-0" href=" https://demos.creative-tim.com/argon-dashboard/pages/dashboard.html " target="_blank">
+        <img src="{% static 'img/logo-ct-dark.png' %}" class="navbar-brand-img h-100" alt="main_logo">
+        <span class="ms-1 font-weight-bold">Plate Detector</span>
+      </a>
+    </div>
+    <hr class="horizontal dark mt-0">
+    {% include 'base_components/main_menu.html' %}
+    <div class="sidenav-footer mx-3 ">
+      
+       
+    </div>
+  </aside>
+  <main class="main-content position-relative border-radius-lg ">
+    <!-- Navbar -->
+
+          {% include 'base_components/top_menu.html' %}
+    <!-- End Navbar -->
+    <div class="container-fluid py-4">
+      {% block content %}
+      {% endblock %}
+      
+
+        {% include 'base_components/footer.html' %}
+    </div>
+  </main>
+  
+  <!--   Core JS Files   -->
+  <script src="{% static 'js/core/popper.min.js' %}"></script>
+  <script src="{% static 'js/core/bootstrap.min.js' %}"></script>
+  <script src="{% static 'js/plugins/perfect-scrollbar.min.js' %}"></script>
+  <script src="{% static 'js/plugins/smooth-scrollbar.min.js' %}"></script>
+  <script src="{% static 'js/plugins/chartjs.min.js' %}"></script>
+  
+  <script>
+    var win = navigator.platform.indexOf('Win') > -1;
+    if (win && document.querySelector('#sidenav-scrollbar')) {
+      var options = {
+        damping: '0.5'
+      }
+      Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
+    }
+  </script>
+  {% block scripts %}
+  {% endblock %}
+  <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
+  {% comment %} <script src="{% static 'js/argon-dashboard.min.js' %}"></script> {% endcomment %}
+</body>
+
+</html>

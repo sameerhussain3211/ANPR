@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="icon" type="image/png" href="{% static 'img/favicon.png' %}">
+        <title> Registered automobiles</title>
+        <!--     Fonts and icons     -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+        <!-- Font Awesome Icons -->
+        <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+        <!-- CSS Files -->
+        <link id="pagestyle" href="{% static 'css/argon-dashboard.css' %}" rel="stylesheet" />
+        <link id="pagestyle" href="{% static 'css/bootstrap.css' %}" rel="stylesheet" />
+    </head>
+    {% block content %}
+
+    <body>
+        <div class="row mt-5">
+            <div class="col-lg-8 mb-lg-0 mb-4">
+                <div class="card mb-4">
+                    <div class="card-header pb-0 p-3 mb-4">
+                        <div class="d-flex justify-content-between">
+                    <h6 class="mb-2">Search Result</h6>
+                        </div>
+                    </div>
+                    {% if user is not None %}
+                    <div class = "px-5">
+                        <div class=" mb-5">
+                            <div class="border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
+                            <div class="d-flex">
+                                <div class="icon icon-shape me-3 bg-gradient-dark shadow text-center justify-content-center" 
+                                style = "width:6rem !important; height:6rem!important;">
+                                    <i class="ni ni-profile text-white opacity-10 my-auto"></i>
+                                </div>
+                                <div class="d-flex flex-column mx-2">
+                                <h5 class="mb-1 text-lg text-dark text">{{user.student_name}}</h5>
+                                <h5 class="mb-1 text-sm text-dark text">ERP: {{user.erp}}</h5>
+                                <h5 class="mb-1 text-sm text-dark text">Program:</h5>
+                                <h5 class="mb-1 text-sm text-dark text">Plate Number: {{user.plate_num}}</h5>
+
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {% else %}
+
+                    <div class = "px-5">
+                        <div class=" mb-5">
+                            <h6 class="text-dark text-lg">User not Found</h6>
+                        </div>
+                    </div>
+                        
+                    {% endif %}
+
+                </div>
+                {% if user is not none %}
+                <div class="card ">
+                    <div class="card-header pb-0 p-3 mb-4">
+                        <div class="d-flex justify-content-between">
+                        </div>
+                    </div>
+                    <div class= "mb-3 pb-4 px-5">
+                        <h3 class="mb-4 text-dark text-lg">Details</h3>
+                        <p>Some Details about the user. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                            Donec at lectus non eros tempus suscipit vel quis nulla. Vestibulum lobortis, 
+                            libero ut finibus vehicula, libero magna commodo ex, vel tincidunt leo dolor quis elit.
+                            Donec varius lobortis enim nec sagittis. Aliquam tincidunt finibus tempor. Aliquam a luctus erat.
+                            In hac habitasse platea dictumst. Vestibulum vel ligula at quam placerat interdum. Aenean metus metus,
+                            placerat at mauris non, commodo vulputate ante. Phasellus euismod diam vitae pellentesque scelerisque. 
+                            Cras porttitor elit ut rutrum commodo. Nunc vestibulum nibh sit amet malesuada tempus.</p>
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+        {% endblock %}
+
+        {% comment %} JS BOOTSRAP {% endcomment %}
+        <script src="{% static 'js/core/bootstrap.min.js' %}"></script>
+
+    </body>
+</html>

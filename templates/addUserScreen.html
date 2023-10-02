@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="icon" type="image/png" href="{% static 'img/favicon.png' %}">
+        <title> Registered automobiles</title>
+        <!--     Fonts and icons     -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+        <!-- Font Awesome Icons -->
+        <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+        <!-- CSS Files -->
+        <link id="pagestyle" href="{% static 'css/argon-dashboard.css' %}" rel="stylesheet" />
+        <link id="pagestyle" href="{% static 'css/bootstrap.css' %}" rel="stylesheet" />
+    </head>
+    {% block content %}
+
+    <body>
+        <div class="row mt-5">
+            <div class="col-lg-8 mb-lg-0 mb-4">
+                <div class="card ">
+                    <div class="card-header pb-0 p-3">
+                        <div class="d-flex justify-content-between">
+                    <h6 class="mb-2">Add automobile to Database</h6>
+                        </div>
+                    </div>
+                    <form class = "px-4 py-3" action="/addUser/" method = "post" >
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label>Name</label>
+                            <input type="text" class="form-control" id="name" placeholder="Name" name = "user_name">
+                        </div>
+                        <div class="form-group">
+                            <label>ERP</label>
+                            <input type="text" class="form-control" id="erp" placeholder="ERP" name = "erp">
+                        </div>
+                        <div class="form-group">
+                            <label>Vehicle Plate Number</label>
+                            <input type="text" class="form-control" id="plate_num" placeholder="Plate Number" name = "plate_num">
+                        </div>
+                        <div class="form-group">
+                        <label for="inputState">Program</label>
+                        <select id="inputState" class="form-control" name = "program">
+                            <option selected>BS-CS</option>
+                            <option>BBA</option>
+                            <option>SS</option>
+                            <option>BS-EM</option>
+                            <option>BS-ACF</option>
+                        </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary mt-4" value="Add">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        {% endblock %}
+
+        {% comment %} JS BOOTSRAP {% endcomment %}
+        <script src="{% static 'js/core/bootstrap.min.js' %}"></script>
+
+    </body>
+</html>
