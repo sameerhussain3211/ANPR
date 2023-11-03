@@ -12,6 +12,7 @@ class ProcessingImg:
     # changing stuff to test the git pull request
     
     print("testing for git pull request")
+    print("for assignment")
     
     def process(self):
         img = cv2.imread(self.new_img)
