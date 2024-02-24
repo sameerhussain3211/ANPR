@@ -66,9 +66,12 @@ To run the ANPR system, you need to have the following installed:
 
 This ANPR system was built using Python, OpenCV, EasyOCR, and Django, incorporating techniques from computer vision and optical character recognition. It was developed as a demonstration project for AI Course, to showcase the capabilities of ANPR technology.
 
-## Author
+## ***Author***
 
 - SAMEER HUSSAIN
 - GitHub: [GitHub Profile](https://github.com/sameerhussain3211)
-for more details: sameerhussain44332211@gmail.com
+
+for more:sameerhussain44332211@gmail.com
+
+
 
